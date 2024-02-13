@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AudioSteganographyClass</class>
+ <widget class="QMainWindow" name="AudioSteganographyClass">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>UpArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Audio Steganography</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(23, 23, 23);
+color: white;</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>50</y>
+      <width>301</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  color: white;
+  font-size: 30px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Audio Steganography</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="uploadLabel">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  display: inline-block;
+  border: 2px solid #555; /* Subdued border color for a less colorful design */
+  padding: 8px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #ccc; /* Lighter text for readability against dark background */
+  background-color: #2b2b2b; /* Very dark but slightly lighter than the page background */
+  border-radius: 4px;
+  margin-top: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Upload Audiofile</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="upload">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>160</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #4C4C4C; /* Dark gray, clean and neutral */
+  color: #fff; /* White text for contrast */
+  border: none;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+QPushButton:hover {
+  background-color: #626262; /* Slightly lighter gray on hover for interactive feedback */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Upload</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="messageText">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>491</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {
+  background-color: #2b2b2b; /* Dark background similar to your app's theme */
+  color: #ccc; /* Light grey text for contrast */
+  border: 1px solid #555; /* Subtle border */
+  padding: 8px; /* Some padding inside the text edit */
+  font-family: Arial, sans-serif; /* Clean, readable font */
+  font-size: 16px; /* Adequate font size for readability */
+  border-radius: 4px; /* Rounded corners for a modern look */
+
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="EncrMethod">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>490</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+  border: 1px solid #555; /* Subtle border */
+  background-color: #2b2b2b; /* Dark background */
+  color: #ccc; /* Light grey text for contrast */
+  padding: 5px;
+  padding-left: 12;
+  padding-right: 20px; /* Ensure there's space for the arrow */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  font-family: Arial, sans-serif; /* Clean, readable font */
+  font-size: 16px; /* Adequate font size */
+}
+
+QComboBox:hover {
+  border-color: #777; /* Slightly lighter border on hover for interactive feedback */
+}
+
+QComboBox::drop-down {
+  subcontrol-origin: padding;
+  subcontrol-position: top right;
+  width: 15px;
+  border-left: 1px solid #555; /* Ensures the arrow area is well defined */
+}
+
+QComboBox QAbstractItemView {
+  border: 1px solid #555; /* Border for the dropdown list */
+  background-color: #333; /* Slightly lighter than the combo box for contrast */
+  color: #ccc; /* Text color */
+  selection-background-color: #555; /* Background of highlighted item */
+  selection-color: #ccc; /* Text color of highlighted item */
+}
+</string>
+    </property>
+    <property name="minimumContentsLength">
+     <number>0</number>
+    </property>
+    <property name="placeholderText">
+     <string>Encryption Method</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>AES</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxRandomIns">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>490</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox {
+  color: #ccc; /* Light grey text */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+QCheckBox::indicator {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #555;
+  background-color: #2b2b2b;
+}
+
+QCheckBox::indicator:checked {
+  background-color: #555;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Random Bit Insertion</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="embedButton">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>560</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  color: #ccc; /* Light grey text color for contrast */
+  background-color: #333; /* Dark grey background */
+  border: 2px solid #555; /* Slightly lighter border for definition */
+  padding: 5px 15px; /* Top and bottom padding, Left and right padding */
+  border-radius: 5px; /* Rounded corners */
+  font-family: Arial, sans-serif; /* Clean, simple font */
+  font-size: 14px; /* Readable text size */
+}
+
+QPushButton:hover {
+  background-color: #444; /* Slightly lighter on hover */
+  border-color: #666; /* Lighter border on hover */
+}
+
+QPushButton:pressed {
+  background-color: #555; /* Even lighter when pressed */
+  border-color: #777; /* Lighter border when pressed */
+}
+
+QPushButton:disabled {
+  color: #666; /* Dimmed text for disabled state */
+  background-color: #2b2b2b; /* Darker background for disabled state */
+  border: 2px solid #444; /* Darker border for disabled state */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Embed</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="extractButton">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>560</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  color: #ccc; /* Light grey text color for contrast */
+  background-color: #333; /* Dark grey background */
+  border: 2px solid #555; /* Slightly lighter border for definition */
+  padding: 5px 15px; /* Top and bottom padding, Left and right padding */
+  border-radius: 5px; /* Rounded corners */
+  font-family: Arial, sans-serif; /* Clean, simple font */
+  font-size: 14px; /* Readable text size */
+}
+
+QPushButton:hover {
+  background-color: #444; /* Slightly lighter on hover */
+  border-color: #666; /* Lighter border on hover */
+}
+
+QPushButton:pressed {
+  background-color: #555; /* Even lighter when pressed */
+  border-color: #777; /* Lighter border when pressed */
+}
+
+QPushButton:disabled {
+  color: #666; /* Dimmed text for disabled state */
+  background-color: #2b2b2b; /* Darker background for disabled state */
+  border: 2px solid #444; /* Darker border for disabled state */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Extract</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resetButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>560</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  color: #ccc; /* Light grey text color for contrast */
+  background-color: #333; /* Dark grey background */
+  border: 2px solid #555; /* Slightly lighter border for definition */
+  padding: 5px 15px; /* Top and bottom padding, Left and right padding */
+  border-radius: 5px; /* Rounded corners */
+  font-family: Arial, sans-serif; /* Clean, simple font */
+  font-size: 14px; /* Readable text size */
+}
+
+QPushButton:hover {
+  background-color: #444; /* Slightly lighter on hover */
+  border-color: #666; /* Lighter border on hover */
+}
+
+QPushButton:pressed {
+  background-color: #555; /* Even lighter when pressed */
+  border-color: #777; /* Lighter border when pressed */
+}
+
+QPushButton:disabled {
+  color: #666; /* Dimmed text for disabled state */
+  background-color: #2b2b2b; /* Darker background for disabled state */
+  border: 2px solid #444; /* Darker border for disabled state */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="audioVisualizerView">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>110</y>
+      <width>531</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="audioVisualizerView2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>360</y>
+      <width>531</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="inputAudioSlider">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>320</y>
+      <width>421</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid #999999; /* Slightly visible border for the groove */
+    height: 2px; /* Slimmer groove line */
+    background: #333; /* Dark background for the groove */
+    margin: 0px 0;
+}
+
+QSlider::handle:horizontal {
+    background: #DDD; /* Light grey handle */
+    border: 1px solid #999999; /* Handle border */
+    width: 12px; /* Smaller handle width */
+    height: 12px; /* Smaller handle height, keeping it circular */
+    margin: -5px 0; /* Ensuring the handle aligns well with the groove */
+    border-radius: 6px; /* Perfect circle */
+}
+
+QSlider::add-page:horizontal {
+    background: #555; /* Darker shade for the part of the bar that's not active */
+}
+
+QSlider::sub-page:horizontal {
+    background: #2196F3; /* YouTube's primary color for the active part of the bar */
+}
+</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="outputAudioSlider">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>570</y>
+      <width>421</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid #999999; /* Slightly visible border for the groove */
+    height: 2px; /* Slimmer groove line */
+    background: #333; /* Dark background for the groove */
+    margin: 0px 0;
+}
+
+QSlider::handle:horizontal {
+    background: #DDD; /* Light grey handle */
+    border: 1px solid #999999; /* Handle border */
+    width: 12px; /* Smaller handle width */
+    height: 12px; /* Smaller handle height, keeping it circular */
+    margin: -5px 0; /* Ensuring the handle aligns well with the groove */
+    border-radius: 6px; /* Perfect circle */
+}
+
+QSlider::add-page:horizontal {
+    background: #555; /* Darker shade for the part of the bar that's not active */
+}
+
+QSlider::sub-page:horizontal {
+    background: #2196F3; /* YouTube's primary color for the active part of the bar */
+}
+</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="playInputButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>310</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #333; /* Darker background for the button */
+    color: #FFF; /* White text */
+    border: 2px solid #555; /* Slightly lighter border for a subtle effect */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 15px; /* Top/bottom padding and left/right padding */
+    font-size: 12px; /* Smaller text */
+    text-align: center;
+}
+
+QPushButton:hover {
+    background-color: #555; /* Slightly lighter on hover */
+    border-color: #6C6C6C;
+}
+
+QPushButton:pressed {
+    background-color: #222; /* Even darker when pressed */
+    border-color: #444;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Play/Pause</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="playOutputButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>560</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #333; /* Darker background for the button */
+    color: #FFF; /* White text */
+    border: 2px solid #555; /* Slightly lighter border for a subtle effect */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 15px; /* Top/bottom padding and left/right padding */
+    font-size: 12px; /* Smaller text */
+    text-align: center;
+}
+
+QPushButton:hover {
+    background-color: #555; /* Slightly lighter on hover */
+    border-color: #6C6C6C;
+}
+
+QPushButton:pressed {
+    background-color: #222; /* Even darker when pressed */
+    border-color: #444;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Play/Pause</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AudioSteganography.qrc"/>
+ </resources>
+ <connections/>
+</ui>
