@@ -105,28 +105,3 @@ std::string audioToMessage(const std::string& filePath) {
     return message;
 }
 
-//int main() {
-//    std::string audioFilePath = "C:\\Users\\ASUS\\Documents\\C++\\AudioSteganography\\AudioSteganography\\AudioSteganography\\secret.wav";
-//    std::string outputFilePath = "C:\\Users\\ASUS\\Documents\\C++\\AudioSteganography\\AudioSteganography\\AudioSteganography\\output.wav";
-//    std::string secretMessage = "you are monke";
-//
-//    // Embed the message
-//    if (hideMessageInAudio(audioFilePath, outputFilePath, secretMessage)) {
-//        std::cout << "Message hidden successfully in " << outputFilePath << std::endl;
-//    }
-//    else {
-//        std::cerr << "Failed to hide the message." << std::endl;
-//    }
-//
-//    // Extract the message
-//    std::string decodedMessage = audioToMessage(outputFilePath);
-//    if (!decodedMessage.empty()) {
-//        std::cout << "Decoded message: " << decodedMessage << std::endl;
-//    }
-//    else {
-//        std::cerr << "Failed to decode the message." << std::endl;
-//    }
-//
-//    return 0;
-//}
-
